@@ -1,0 +1,28 @@
+# GitHub Repository Helper
+## Description
+
+This Python module aims to achieve the following goals:
+
+* Automate the process of creating GitHub template repositories. 
+* Automate the creation of new repositories using the defined templates.
+* Create template repositories with pre-defined pre-commit hooks, standardized GitHub actions that define a series of standard actions for linting, formatting, styling, and security checks.
+
+## Design
+### Core Functions
+#### Initialization
+
+This function should achieve the following objectives:
+
+* It should define the following default paths for the application:
+
+```bash
+$/.gitrepohelper/config.cfg
+$/git-repos
+```
+* The configuration file should have it's permissions set where it is only readable by the application itself. 
+
+* The initialization function should also check if the ```gh``` cli tool is installed and query the host system locally for a GitHub authentication token. If the ```gh``` cli tool is not installed, the script should prompt for a GitHub Personal Access Token (PAT).
+
+    NOTE: This should also include a link to the GitHub documentation that describes how to create a PAT. Documentation link could be here, https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/about-authentication-to-github
+
+* Once the initialization function is run, some value or switch should be flipped so that the script does not re-run the initialization function. 
